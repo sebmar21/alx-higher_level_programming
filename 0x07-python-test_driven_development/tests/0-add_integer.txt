@@ -59,7 +59,3 @@ TypeError: b must be an integer
 Traceback (most recent call last):
 ...
 TypeError: b must be an integer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-P

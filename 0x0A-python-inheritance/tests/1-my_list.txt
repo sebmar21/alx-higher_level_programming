@@ -1,0 +1,75 @@
+The 1-my_list module
+====================
+
+Using ``print_sorted``
+----------------------
+>>> import sys
+>>> sys.path.insert(1, '../')
+>>> lib = __import__("1-my_list")
+>>> my_list = lib.MyList
+
+Testing that MyList Inheritance:
+true value
+>>> a = [1, 4, 2, 3, 5]
+>>> b = []
+
+
+Testing for list already in correct order:
+>>> my_list(a)
+[1, 4, 2, 3, 5]
+
+>>> my_list()
+[]
+
+>>> my_list.print_sorted(a)
+[1, 2, 3, 4, 5]
+
+>>> my_list(b)
+[]
+
+
+>>> issubclass(my_list, list)
+True
+
+Testing for reversed order list:
+>>> l = my_list()
+
+>>> l.append(1)
+>>> l.append(4)
+>>> l.append(8)
+>>> l.append(6)
+>>> l.append(3)
+>>> l.append(2)
+
+>>> print(l)
+[1, 4, 8, 6, 3, 2]
+
+>>> my_list.print_sorted(l)
+[1, 2, 3, 4, 6, 8]
+
+string sort
+>>> my_list([True, False, True, False])
+[True, False, True, False]
+>>> my_list.print_sorted([True, False, True, False])
+[False, False, True, True]
+
+>>> my_list(['1', '2', '6', '7'])
+['1', '2', '6', '7']
+
+>>> my_list.print_sorted(['1', '2', '6', '7'])
+['1', '2', '6', '7']
+
+Testing for module docstring:
+>>> m = __import__("1-my_list").__doc__
+>>> len(m) > 1
+True
+
+Testing for class docstring:
+>>> c = __import__("1-my_list").MyList.__doc__
+>>> len(c) > 1
+True
+
+Testing for method docstring:
+>>> mod = __import__("1-my_list").MyList.print_sorted.__doc__
+>>> len(mod) > 1
+True

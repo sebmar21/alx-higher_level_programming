@@ -1,3 +1,4 @@
--- print full description of the table first_table
--- from the database hbtn_0c_0
-SHOW CREATE TABLE first_table;
+-- creates a tabel first_table in current db
+-- does not fail if table exists
+CREATE TABLE IF NOT EXISTS first_table (id INT,
+name VARCHAR(256));
